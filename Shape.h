@@ -11,6 +11,9 @@
 #define LL 4
 #define SKEW 5
 
+
+// TODO: https://en.wikipedia.org/wiki/Tetromino
+
 class Shape {
 
 };

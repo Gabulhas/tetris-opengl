@@ -11,6 +11,8 @@
 #define COLUMNS 10
 #define EMPTY 0
 
+// TODO: https://github.com/janbodnar/Java-Tetris-Game/blob/master/com/zetcode/Shape.java
+
 class Board {
 public:
     int board[ROWS][COLUMNS] {};
