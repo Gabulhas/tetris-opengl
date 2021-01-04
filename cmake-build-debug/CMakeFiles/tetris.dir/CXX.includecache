@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/guilherme/CLionProjects/projeto-final/Board.cpp
+vector
+-
+Board.h
+/home/guilherme/CLionProjects/projeto-final/Board.h
+cstdio
+/home/guilherme/CLionProjects/projeto-final/cstdio
+Position.h
+/home/guilherme/CLionProjects/projeto-final/Position.h
+
+/home/guilherme/CLionProjects/projeto-final/Board.h
+
+/home/guilherme/CLionProjects/projeto-final/Position.cpp
+Position.h
+/home/guilherme/CLionProjects/projeto-final/Position.h
+
+/home/guilherme/CLionProjects/projeto-final/Position.h
+

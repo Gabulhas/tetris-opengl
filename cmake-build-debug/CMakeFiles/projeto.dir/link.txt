@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/projeto.dir/main.cpp.o CMakeFiles/projeto.dir/GLAD/src/glad.c.o CMakeFiles/projeto.dir/Board.cpp.o  -o projeto  /usr/lib/libglfw.so.3.3 -lglut -lGL -lGLU -lGLEW common/libcommon.a -ldl 

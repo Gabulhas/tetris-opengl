@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/ficha7_3.dir/main.cpp.o CMakeFiles/ficha7_3.dir/GLAD/src/glad.c.o CMakeFiles/ficha7_3.dir/Board.cpp.o  -o ficha7_3  /usr/lib/libglfw.so.3.3 -lglut -lGL -lGLU -lGLEW common/libcommon.a -ldl 

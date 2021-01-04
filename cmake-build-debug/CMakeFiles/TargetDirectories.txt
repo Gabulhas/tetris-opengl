@@ -1,0 +1,6 @@
+/home/guilherme/CLionProjects/projeto-final/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/guilherme/CLionProjects/projeto-final/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/guilherme/CLionProjects/projeto-final/cmake-build-debug/CMakeFiles/tetris.dir
+/home/guilherme/CLionProjects/projeto-final/cmake-build-debug/common/CMakeFiles/rebuild_cache.dir
+/home/guilherme/CLionProjects/projeto-final/cmake-build-debug/common/CMakeFiles/edit_cache.dir
+/home/guilherme/CLionProjects/projeto-final/cmake-build-debug/common/CMakeFiles/common.dir
