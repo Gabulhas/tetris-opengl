@@ -12,6 +12,13 @@ CMakeFiles/tetris.dir/Board.cpp.o: ../Position.h
 CMakeFiles/tetris.dir/Position.cpp.o: ../Position.cpp
 CMakeFiles/tetris.dir/Position.cpp.o: ../Position.h
 
+CMakeFiles/tetris.dir/Shape.cpp.o: ../Shape.cpp
+CMakeFiles/tetris.dir/Shape.cpp.o: ../Shape.h
+
 CMakeFiles/tetris.dir/main.cpp.o: ../Board.h
+CMakeFiles/tetris.dir/main.cpp.o: ../Position.h
+CMakeFiles/tetris.dir/main.cpp.o: ../Shape.h
 CMakeFiles/tetris.dir/main.cpp.o: ../main.cpp
+
+CMakeFiles/tetris.dir/test.cpp.o: ../test.cpp
 

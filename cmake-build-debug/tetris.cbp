@@ -206,6 +206,9 @@
 		<Unit filename="/home/guilherme/CLionProjects/projeto-final/main.cpp">
 			<Option target="tetris"/>
 		</Unit>
+		<Unit filename="/home/guilherme/CLionProjects/projeto-final/test.cpp">
+			<Option target="tetris"/>
+		</Unit>
 		<Unit filename="/home/guilherme/CLionProjects/projeto-final/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

@@ -9,5 +9,5 @@ add_subdirectory(common)
 
 include_directories( SYSTEM "GLAD/include" )
 
-add_executable(tetris main.cpp "GLAD/src/glad.c" Board.cpp Board.h Position.cpp Position.h Shape.cpp Shape.h)
+add_executable(tetris main.cpp "GLAD/src/glad.c" Board.cpp Board.h Position.cpp Position.h Shape.cpp Shape.h test.cpp)
 target_link_libraries(tetris glfw -lglut -lGL -lGLU GLEW common -ldl)

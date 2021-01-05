@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/tetris.dir/Position.cpp.o"
   "CMakeFiles/tetris.dir/Shape.cpp.o"
   "CMakeFiles/tetris.dir/main.cpp.o"
+  "CMakeFiles/tetris.dir/test.cpp.o"
   "tetris"
   "tetris.pdb"
 )

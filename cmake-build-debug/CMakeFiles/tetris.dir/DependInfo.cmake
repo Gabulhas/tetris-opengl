@@ -18,6 +18,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/guilherme/CLionProjects/projeto-final/Position.cpp" "/home/guilherme/CLionProjects/projeto-final/cmake-build-debug/CMakeFiles/tetris.dir/Position.cpp.o"
   "/home/guilherme/CLionProjects/projeto-final/Shape.cpp" "/home/guilherme/CLionProjects/projeto-final/cmake-build-debug/CMakeFiles/tetris.dir/Shape.cpp.o"
   "/home/guilherme/CLionProjects/projeto-final/main.cpp" "/home/guilherme/CLionProjects/projeto-final/cmake-build-debug/CMakeFiles/tetris.dir/main.cpp.o"
+  "/home/guilherme/CLionProjects/projeto-final/test.cpp" "/home/guilherme/CLionProjects/projeto-final/cmake-build-debug/CMakeFiles/tetris.dir/test.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -6,21 +6,29 @@
 
 #IncludeRegexTransform: 
 
-/home/guilherme/CLionProjects/projeto-final/Board.cpp
+/home/guilherme/CLionProjects/projeto-final/Board.h
+Position.h
+/home/guilherme/CLionProjects/projeto-final/Position.h
+
+/home/guilherme/CLionProjects/projeto-final/Position.h
+
+/home/guilherme/CLionProjects/projeto-final/Shape.cpp
+Shape.h
+/home/guilherme/CLionProjects/projeto-final/Shape.h
+cstdio
+/home/guilherme/CLionProjects/projeto-final/cstdio
+
+/home/guilherme/CLionProjects/projeto-final/Shape.h
 vector
+/home/guilherme/CLionProjects/projeto-final/vector
+
+/home/guilherme/CLionProjects/projeto-final/main.cpp
+cstdlib
+-
+cstdio
 -
 Board.h
 /home/guilherme/CLionProjects/projeto-final/Board.h
-cstdio
-/home/guilherme/CLionProjects/projeto-final/cstdio
-Position.h
-/home/guilherme/CLionProjects/projeto-final/Position.h
-
-/home/guilherme/CLionProjects/projeto-final/Board.h
-
-/home/guilherme/CLionProjects/projeto-final/Position.cpp
-Position.h
-/home/guilherme/CLionProjects/projeto-final/Position.h
-
-/home/guilherme/CLionProjects/projeto-final/Position.h
+Shape.h
+/home/guilherme/CLionProjects/projeto-final/Shape.h
 
