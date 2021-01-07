@@ -9,18 +9,16 @@
 /home/guilherme/CLionProjects/projeto-final/Board.h
 Position.h
 /home/guilherme/CLionProjects/projeto-final/Position.h
-
-/home/guilherme/CLionProjects/projeto-final/Position.h
-
-/home/guilherme/CLionProjects/projeto-final/Shape.cpp
 Shape.h
 /home/guilherme/CLionProjects/projeto-final/Shape.h
-cstdio
-/home/guilherme/CLionProjects/projeto-final/cstdio
+
+/home/guilherme/CLionProjects/projeto-final/Position.h
 
 /home/guilherme/CLionProjects/projeto-final/Shape.h
 vector
 /home/guilherme/CLionProjects/projeto-final/vector
+Position.h
+/home/guilherme/CLionProjects/projeto-final/Position.h
 
 /home/guilherme/CLionProjects/projeto-final/main.cpp
 cstdlib
@@ -31,4 +29,12 @@ Board.h
 /home/guilherme/CLionProjects/projeto-final/Board.h
 Shape.h
 /home/guilherme/CLionProjects/projeto-final/Shape.h
+iostream
+-
+unistd.h
+-
+fcntl.h
+-
+unistd.h
+-
 

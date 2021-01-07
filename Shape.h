@@ -6,6 +6,7 @@
 #define TETRIS_SHAPE_H
 
 #include "vector"
+#include "Position.h"
 
 using namespace std;
 
@@ -16,17 +17,38 @@ using namespace std;
 
 class Shape {
 public:
-    vector<vector<vector<int>>> myShape;
-    int currentRotation = 0;
+    Shape();
 
     Shape(char type);
 
+//tracks the type of each square (for rendering)
+    vector<vector<vector<int>>> myShape;
+
+    //tracks all the coordinates of each square
+    vector<vector<Position>> myCoordinates;
+    int currentRotation = 0;
 
     void printShape();
 
-    void rotateShape();
-
     void rotateShape(int i);
+
+    int getBlock(int row, int col);
+
+    void printCoordinates();
+
+    void move(char direction);
+    vector<vector<Position>> getMove(char direction);
+    void move(vector<vector<Position>> coordinates);
+    void setCoordinates(vector<vector<Position>> coordinates);
+
+private:
+    void startCoordinates();
+
+
+    vector<vector<Position>> moveAux(vector<vector<Position>> coordinates, char direction);
+    vector<vector<Position>> moveChange(vector<vector<Position>> coordinates, int x, int y);
+
+    void rotate_temp(int i);
 };
 
 

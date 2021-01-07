@@ -8,10 +8,12 @@ CMakeFiles/tetris.dir/GLAD/src/glad.c.o: ../GLAD/src/glad.c
 CMakeFiles/tetris.dir/Board.cpp.o: ../Board.cpp
 CMakeFiles/tetris.dir/Board.cpp.o: ../Board.h
 CMakeFiles/tetris.dir/Board.cpp.o: ../Position.h
+CMakeFiles/tetris.dir/Board.cpp.o: ../Shape.h
 
 CMakeFiles/tetris.dir/Position.cpp.o: ../Position.cpp
 CMakeFiles/tetris.dir/Position.cpp.o: ../Position.h
 
+CMakeFiles/tetris.dir/Shape.cpp.o: ../Position.h
 CMakeFiles/tetris.dir/Shape.cpp.o: ../Shape.cpp
 CMakeFiles/tetris.dir/Shape.cpp.o: ../Shape.h
 

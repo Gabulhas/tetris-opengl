@@ -9,8 +9,12 @@
 class Position {
 public:
     Position(int x, int y);
+
     int x;
     int y;
+
+    void print();
+
 };
 
 

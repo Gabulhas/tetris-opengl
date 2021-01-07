@@ -6,8 +6,9 @@
 #define TETRIS_BOARD_H
 
 #include "Position.h"
+#include "Shape.h"
 
-#define ROWS 22
+#define ROWS 20
 #define COLUMNS 10
 #define EMPTY 0
 
@@ -15,16 +16,30 @@
 
 class Board {
 public:
-    int board[ROWS][COLUMNS] {};
+    vector<vector<int>> board;
     Board();
     void newBoard();
     void print_board();
     int shape_at(int x, int y);
     int shape_at(Position pos);
 
+    Shape *currentShape;
     void clearBoard();
 
+    bool insertShape(Shape *shape);
+
+    vector<vector<int>> getcurrentState();
+    bool move_piece(char direction);
+    void print_state();
+
+private:
     bool isRowFull(int Row);
+
+    bool check_collision_aux(vector<vector<Position>> state);
+
+    void print_aux(vector<vector<int>> temp);
+
+    void save_piece();
 };
 
 
