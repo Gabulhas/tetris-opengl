@@ -31,6 +31,8 @@ public:
     vector<vector<int>> getcurrentState();
     bool move_piece(char direction);
     void print_state();
+    void deleteRow(int row);
+
 
 private:
     bool isRowFull(int Row);
@@ -40,6 +42,8 @@ private:
     void print_aux(vector<vector<int>> temp);
 
     void save_piece();
+
+    vector<int> clearFullRows();
 };
 
 

@@ -48,7 +48,6 @@ bool Board::isRowFull(int Row) {
         }
     }
     return true;
-
 }
 
 //TODO: adicionar collision e perder o jogo
@@ -147,5 +146,32 @@ void Board::print_aux(vector<vector<int>> temp) {
             }
         }
         printf("\n");
+    }
+}
+
+
+
+vector<int> Board::clearFullRows() {
+    vector<int> clearedRows;
+
+    for(int i = 0; i < ROWS; i++){
+        if(isRowFull(i)){
+           deleteRow(i);
+           clearedRows.push_back(i);
+        }
+    }
+    return clearedRows;
+}
+
+
+void Board::deleteRow(int row) {
+    for (int i = 0; i < COLUMNS; i++) {
+        board.at(row).at(i) = 0;
+    }
+    for (int i = row - 1; i >= 0; i--) {
+        board.at(i + 1) = board.at(i);
+    }
+    for (int i = 0; i < COLUMNS; i++) {
+        board.at(0).at(i) = 0;
     }
 }

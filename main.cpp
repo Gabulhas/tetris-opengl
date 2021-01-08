@@ -16,8 +16,8 @@ int main(void) {
     Shape shape = Shape();
     board.insertShape(&shape);
     //board.move_piece('D');
-    board.print_state();
     char letter;
+    /*
 
     for (;;) {
         char buf[20];
@@ -30,6 +30,9 @@ int main(void) {
         } else {
             letter = 'D';
         }
+        cout << "Letter:";
+        cin >> letter;
+
         if (letter == 'U') {
             board.currentShape->rotateShape(1);
         }
@@ -42,7 +45,7 @@ int main(void) {
             if (letter == 'D') {
                 shape = Shape();
 
-                if (board.insertShape(&shape)) {
+                if (!board.insertShape(&shape)) {
                     printf("PERDEU");
                     break;
                 };
@@ -55,5 +58,13 @@ int main(void) {
         board.print_state();
 
     }
+    */
+    for (int j = 0; j < ROWS; j++) {
+        for (int i = 0; i < COLUMNS; i++) {
+            board.board.at(j).at(i) = j;
+        }
+    }
+
 
 }
+
