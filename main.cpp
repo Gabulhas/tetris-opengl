@@ -1,70 +1,88 @@
-#include <cstdlib>
-#include <cstdio>
+// Include standard headers
+#include <stdio.h>
+#include <stdlib.h>
+// Include GLEW
+#include <GL/glew.h>
+// Include GLFW
+#include <GLFW/glfw3.h>
+
+GLFWwindow *window;
+
+// GLM header file
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+#include <iostream>
+
+using namespace glm;
+
+#include "common/shader.hpp"
+
+#define WINDOW_H 800
+#define WINDOW_W 600
+
 #include "Board.h"
 #include "Shape.h"
-#include <iostream>
-#include <unistd.h>
-#include <fcntl.h>
-#include <unistd.h> // for sleep()
+#include "Game.h"
+
+//J para Jogo, M para menu
+char state = 'J';
+
+void setup();
+
+void startGame();
+
+void startState();
 
 int main(void) {
+    setup();
+    startState();
+}
 
-    Board board = Board();
-    board.newBoard();
-
-
-    Shape shape = Shape();
-    board.insertShape(&shape);
-    //board.move_piece('D');
-    char letter;
-    /*
-
-    for (;;) {
-        char buf[20];
-        fcntl(0, F_SETFL, fcntl(0, F_GETFL) | O_NONBLOCK);
-        sleep(1);
-        int numRead = read(0, buf, 4);
-        if (numRead > 0) {
-            letter = numRead;
-            cout<<numRead;
-        } else {
-            letter = 'D';
-        }
-        cout << "Letter:";
-        cin >> letter;
-
-        if (letter == 'U') {
-            board.currentShape->rotateShape(1);
-        }
-
-        if (board.move_piece(letter)) {
-
-            cout << "moved";
-        } else {
-            cout << "didn't move";
-            if (letter == 'D') {
-                shape = Shape();
-
-                if (!board.insertShape(&shape)) {
-                    printf("PERDEU");
-                    break;
-                };
-
-            }
-        }
-        cout << "\n\n";
-        board.currentShape->printCoordinates();
-        cout << "\n\n";
-        board.print_state();
-
+//Diz se estamos no menu ou no jogo
+void startState() {
+    switch (state) {
+        case 'J':
+            startGame();
+            break;
+        case 'M':
+            break;
     }
-    */
-    for (int j = 0; j < ROWS; j++) {
-        for (int i = 0; i < COLUMNS; i++) {
-            board.board.at(j).at(i) = j;
-        }
-    }
-
 
 }
 
+
+void setup() {
+
+    // Initialise GLFW
+    glfwInit();
+
+    glfwWindowHint(GLFW_SAMPLES, 4);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); // To make MacOS happy; should not be needed
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+
+    // Open a window
+    window = glfwCreateWindow(800, 800, "Moving House in 2D ", NULL, NULL);
+
+    // Create window context
+    glfwMakeContextCurrent(window);
+
+    // Initialize GLEW
+    glewExperimental = true; // Needed for core profile
+    glewInit();
+
+    // Ensure we can capture the escape key being pressed below
+    glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
+
+    // White background
+    glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
+
+}
+
+
+void startGame() {
+    Game game = Game(WINDOW_H, WINDOW_W, window);
+    game.Start();
+}

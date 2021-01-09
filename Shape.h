@@ -40,6 +40,7 @@ public:
     vector<vector<Position>> getMove(char direction);
     void move(vector<vector<Position>> coordinates);
     void setCoordinates(vector<vector<Position>> coordinates);
+    bool hasNegative();
 
 private:
     void startCoordinates();
@@ -49,6 +50,7 @@ private:
     vector<vector<Position>> moveChange(vector<vector<Position>> coordinates, int x, int y);
 
     void rotate_temp(int i);
+
 };
 
 

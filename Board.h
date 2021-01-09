@@ -32,6 +32,7 @@ public:
     bool move_piece(char direction);
     void print_state();
     void deleteRow(int row);
+    vector<int> clearFullRows();
 
 
 private:
@@ -43,7 +44,6 @@ private:
 
     void save_piece();
 
-    vector<int> clearFullRows();
 };
 
 

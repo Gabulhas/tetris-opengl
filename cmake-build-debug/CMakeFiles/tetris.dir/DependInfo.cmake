@@ -15,6 +15,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   )
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/guilherme/CLionProjects/projeto-final/Board.cpp" "/home/guilherme/CLionProjects/projeto-final/cmake-build-debug/CMakeFiles/tetris.dir/Board.cpp.o"
+  "/home/guilherme/CLionProjects/projeto-final/Game.cpp" "/home/guilherme/CLionProjects/projeto-final/cmake-build-debug/CMakeFiles/tetris.dir/Game.cpp.o"
   "/home/guilherme/CLionProjects/projeto-final/Position.cpp" "/home/guilherme/CLionProjects/projeto-final/cmake-build-debug/CMakeFiles/tetris.dir/Position.cpp.o"
   "/home/guilherme/CLionProjects/projeto-final/Shape.cpp" "/home/guilherme/CLionProjects/projeto-final/cmake-build-debug/CMakeFiles/tetris.dir/Shape.cpp.o"
   "/home/guilherme/CLionProjects/projeto-final/main.cpp" "/home/guilherme/CLionProjects/projeto-final/cmake-build-debug/CMakeFiles/tetris.dir/main.cpp.o"

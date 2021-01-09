@@ -12,6 +12,40 @@ Position.h
 Shape.h
 /home/guilherme/CLionProjects/projeto-final/Shape.h
 
+/home/guilherme/CLionProjects/projeto-final/Game.cpp
+cstdio
+-
+iostream
+-
+Game.h
+/home/guilherme/CLionProjects/projeto-final/Game.h
+Models.h
+/home/guilherme/CLionProjects/projeto-final/Models.h
+utils.h
+/home/guilherme/CLionProjects/projeto-final/utils.h
+
+/home/guilherme/CLionProjects/projeto-final/Game.h
+GL/glew.h
+-
+GLFW/glfw3.h
+-
+common/shader.hpp
+/home/guilherme/CLionProjects/projeto-final/common/shader.hpp
+glm/glm.hpp
+-
+glm/gtc/matrix_transform.hpp
+-
+glm/gtc/type_ptr.hpp
+-
+common/shader.hpp
+/home/guilherme/CLionProjects/projeto-final/common/shader.hpp
+Board.h
+/home/guilherme/CLionProjects/projeto-final/Board.h
+
+/home/guilherme/CLionProjects/projeto-final/Models.h
+GL/glew.h
+-
+
 /home/guilherme/CLionProjects/projeto-final/Position.h
 
 /home/guilherme/CLionProjects/projeto-final/Shape.h
@@ -20,21 +54,11 @@ vector
 Position.h
 /home/guilherme/CLionProjects/projeto-final/Position.h
 
-/home/guilherme/CLionProjects/projeto-final/main.cpp
-cstdlib
--
-cstdio
--
-Board.h
-/home/guilherme/CLionProjects/projeto-final/Board.h
-Shape.h
-/home/guilherme/CLionProjects/projeto-final/Shape.h
+/home/guilherme/CLionProjects/projeto-final/common/shader.hpp
+
+/home/guilherme/CLionProjects/projeto-final/utils.h
 iostream
 -
-unistd.h
--
-fcntl.h
--
-unistd.h
+ctime
 -
 

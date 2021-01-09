@@ -210,6 +210,33 @@ GLAD/src/glad.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tetris.dir/build.make CMakeFiles/tetris.dir/GLAD/src/glad.c.s
 .PHONY : GLAD/src/glad.c.s
 
+Game.o: Game.cpp.o
+
+.PHONY : Game.o
+
+# target to build an object file
+Game.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tetris.dir/build.make CMakeFiles/tetris.dir/Game.cpp.o
+.PHONY : Game.cpp.o
+
+Game.i: Game.cpp.i
+
+.PHONY : Game.i
+
+# target to preprocess a source file
+Game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tetris.dir/build.make CMakeFiles/tetris.dir/Game.cpp.i
+.PHONY : Game.cpp.i
+
+Game.s: Game.cpp.s
+
+.PHONY : Game.s
+
+# target to generate assembly for a file
+Game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tetris.dir/build.make CMakeFiles/tetris.dir/Game.cpp.s
+.PHONY : Game.cpp.s
+
 Position.o: Position.cpp.o
 
 .PHONY : Position.o
@@ -334,6 +361,9 @@ help:
 	@echo "... GLAD/src/glad.o"
 	@echo "... GLAD/src/glad.i"
 	@echo "... GLAD/src/glad.s"
+	@echo "... Game.o"
+	@echo "... Game.i"
+	@echo "... Game.s"
 	@echo "... Position.o"
 	@echo "... Position.i"
 	@echo "... Position.s"

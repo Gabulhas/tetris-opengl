@@ -137,6 +137,15 @@
 		<Unit filename="/home/guilherme/CLionProjects/projeto-final/GLAD/src/glad.c">
 			<Option target="tetris"/>
 		</Unit>
+		<Unit filename="/home/guilherme/CLionProjects/projeto-final/Game.cpp">
+			<Option target="tetris"/>
+		</Unit>
+		<Unit filename="/home/guilherme/CLionProjects/projeto-final/Game.h">
+			<Option target="tetris"/>
+		</Unit>
+		<Unit filename="/home/guilherme/CLionProjects/projeto-final/Models.h">
+			<Option target="tetris"/>
+		</Unit>
 		<Unit filename="/home/guilherme/CLionProjects/projeto-final/Position.cpp">
 			<Option target="tetris"/>
 		</Unit>
@@ -207,6 +216,9 @@
 			<Option target="tetris"/>
 		</Unit>
 		<Unit filename="/home/guilherme/CLionProjects/projeto-final/test.cpp">
+			<Option target="tetris"/>
+		</Unit>
+		<Unit filename="/home/guilherme/CLionProjects/projeto-final/utils.h">
 			<Option target="tetris"/>
 		</Unit>
 		<Unit filename="/home/guilherme/CLionProjects/projeto-final/CMakeLists.txt">

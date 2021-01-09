@@ -43,7 +43,7 @@ void Board::clearBoard() {
 
 bool Board::isRowFull(int Row) {
     for (int i = 0; i < COLUMNS; i++) {
-        if (board[Row][i] != EMPTY) {
+        if (board[Row][i] == EMPTY) {
             return false;
         }
     }
@@ -57,10 +57,10 @@ bool Board::insertShape(Shape *shape) {
         for (int j = 0; j < shape->myCoordinates.at(i).size(); j++) {
             Position temp = shape->myCoordinates[i][j];
             shape->myCoordinates[i][j] = Position(j + X_START, temp.y);
-
         }
     }
-    if (check_collision_aux(shape->getMove('N'))) {
+    if (check_collision_aux(shape->myCoordinates)) {
+        printf("\n#######DED########3\n");
         return false;
     }
     return true;
@@ -115,8 +115,12 @@ bool Board::check_collision_aux(vector<vector<Position>> state) {
                 if (temp.x < 0 || temp.x > COLUMNS - 1 ||
                     temp.y > ROWS - 1) {
                     return true;
-                } else if (temp.y > 0) {
-                    if (board[temp.y][temp.x] != 0) {
+                }
+                if (temp.y > 0) {
+                    if (board[temp.y][temp.x] != EMPTY) {
+                        fflush(stdout);
+                        printf("Piece collusion");
+
                         return true;
                     }
                 }
@@ -150,15 +154,21 @@ void Board::print_aux(vector<vector<int>> temp) {
 }
 
 
-
 vector<int> Board::clearFullRows() {
     vector<int> clearedRows;
+    bool flag = false;
 
-    for(int i = 0; i < ROWS; i++){
-        if(isRowFull(i)){
-           deleteRow(i);
-           clearedRows.push_back(i);
+    for (int i = 0; i < ROWS; i++) {
+        if (isRowFull(i)) {
+            deleteRow(i);
+            clearedRows.push_back(i);
+            flag = true;
         }
+    }
+    if (flag) {
+        fflush(stdout);
+        printf("CLEARING");
+        fflush(stdout);
     }
     return clearedRows;
 }

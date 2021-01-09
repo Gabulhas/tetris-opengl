@@ -374,3 +374,14 @@ void Shape::rotate_temp(int i) {
     currentRotation = nextRotation;
 
 }
+
+bool Shape::hasNegative() {
+    for (int i = 0; i < myCoordinates.size(); i++) {
+        for (int j = 0; j < myCoordinates.at(i).size(); j++) {
+            if (myCoordinates.at(i).at(j).y < 0) {
+                return true;
+            }
+        }
+    }
+    return false;
+}

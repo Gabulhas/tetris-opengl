@@ -10,6 +10,15 @@ CMakeFiles/tetris.dir/Board.cpp.o
  /home/guilherme/CLionProjects/projeto-final/Board.h
  /home/guilherme/CLionProjects/projeto-final/Position.h
  /home/guilherme/CLionProjects/projeto-final/Shape.h
+CMakeFiles/tetris.dir/Game.cpp.o
+ /home/guilherme/CLionProjects/projeto-final/Board.h
+ /home/guilherme/CLionProjects/projeto-final/Game.cpp
+ /home/guilherme/CLionProjects/projeto-final/Game.h
+ /home/guilherme/CLionProjects/projeto-final/Models.h
+ /home/guilherme/CLionProjects/projeto-final/Position.h
+ /home/guilherme/CLionProjects/projeto-final/Shape.h
+ /home/guilherme/CLionProjects/projeto-final/common/shader.hpp
+ /home/guilherme/CLionProjects/projeto-final/utils.h
 CMakeFiles/tetris.dir/Position.cpp.o
  /home/guilherme/CLionProjects/projeto-final/Position.cpp
  /home/guilherme/CLionProjects/projeto-final/Position.h
@@ -19,8 +28,10 @@ CMakeFiles/tetris.dir/Shape.cpp.o
  /home/guilherme/CLionProjects/projeto-final/Shape.h
 CMakeFiles/tetris.dir/main.cpp.o
  /home/guilherme/CLionProjects/projeto-final/Board.h
+ /home/guilherme/CLionProjects/projeto-final/Game.h
  /home/guilherme/CLionProjects/projeto-final/Position.h
  /home/guilherme/CLionProjects/projeto-final/Shape.h
+ /home/guilherme/CLionProjects/projeto-final/common/shader.hpp
  /home/guilherme/CLionProjects/projeto-final/main.cpp
 CMakeFiles/tetris.dir/test.cpp.o
  /home/guilherme/CLionProjects/projeto-final/test.cpp
