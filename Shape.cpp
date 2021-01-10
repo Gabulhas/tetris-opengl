@@ -364,7 +364,6 @@ void Shape::rotate_temp(int i) {
 
     int totalRotations = myShape.size();
     int nextRotation = currentRotation + i;
-    printf("Next Rotation, %d\n", nextRotation);
 
     if (nextRotation < 0) {
         nextRotation = totalRotations - 1;

@@ -11,13 +11,15 @@
 // Include GLFW
 #include <GLFW/glfw3.h>
 #include "common/shader.hpp"
+#include "common/stb_image.h"
+
 // GLM header file
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 using namespace glm;
 // shaders header file
-#include "common/shader.hpp"
+
 #include "Board.h"
 
 class Game {
@@ -39,12 +41,14 @@ private:
 
     GLuint block_vertex_buffer;
     GLuint block_color_buffers[8]{};
+    GLuint block_texture;
 
+    int pontos = 1;
 
 
     void tick();
 
-    bool listenMoves();
+    void listenMoves();
 
     void render();
 

@@ -60,7 +60,6 @@ bool Board::insertShape(Shape *shape) {
         }
     }
     if (check_collision_aux(shape->myCoordinates)) {
-        printf("\n#######DED########3\n");
         return false;
     }
     return true;
@@ -155,21 +154,16 @@ void Board::print_aux(vector<vector<int>> temp) {
 
 
 vector<int> Board::clearFullRows() {
-    vector<int> clearedRows;
-    bool flag = false;
+    vector<int> clearedRows ;
 
     for (int i = 0; i < ROWS; i++) {
         if (isRowFull(i)) {
             deleteRow(i);
             clearedRows.push_back(i);
-            flag = true;
+
         }
     }
-    if (flag) {
-        fflush(stdout);
-        printf("CLEARING");
-        fflush(stdout);
-    }
+    printf("\nCleard Rows: %zu", clearedRows.size());
     return clearedRows;
 }
 

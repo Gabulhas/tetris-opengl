@@ -8,7 +8,6 @@
 #include "Game.h"
 #include "Models.h"
 #include "utils.h"
-#include "common/stb_image.h"
 
 
 Game::Game(int HEIGHT, int WIDTH, GLFWwindow *window) {
@@ -35,15 +34,17 @@ void Game::tick() {
         render();
         listenMoves();
         if (!gameBoard.move_piece('D')) {
-            gameBoard.clearFullRows();
+            vector<int> clearedRows = gameBoard.clearFullRows();
+            if (pontos != pontos + clearedRows.size()) {
+                pontos += clearedRows.size();
+            }
+
             running = !gameBoard.currentShape->hasNegative();
             shape = Shape();
             gameBoard.insertShape(&shape);
             fflush(stdout);
-            gameBoard.currentShape->printCoordinates();
         }
-        gameBoard.clearFullRows();
-        sleep(0.1f);
+        sleep(((float) 0.3 / pontos));
     }
 
 }
@@ -68,6 +69,9 @@ void Game::draw(void) {
     //glm::mat4 view = glm::mat4(1.0f);
     glm::mat4 mvp = glm::ortho(-40.0f, 40.0f, -40.0f, 40.0f);
 
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, block_texture);
+
     // Our ModelViewProjection : multiplication of our 3 matrices
     //glm::mat4 mvp = projection * view * model;
     // Remember, matrix multiplication is the other way around
@@ -82,13 +86,17 @@ void Game::draw(void) {
     glm::mat4 trans = glm::mat4(1.0);
 
     float zoom = 1.5;
-    glm::mat4 scale = glm::scale(glm::mat4(1.0f),glm::vec3(zoom, zoom, zoom) );
+    glm::mat4 scale = glm::scale(glm::mat4(1.0f), glm::vec3(zoom, zoom, zoom));
     glUniformMatrix4fv(m, 1, GL_FALSE, &(scale * trans)[0][0]);
 
 
     glEnableVertexAttribArray(0);
     glBindBuffer(GL_ARRAY_BUFFER, block_vertex_buffer);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (void *) 0);
+
+    glEnableVertexAttribArray(2);
+    glBindBuffer(GL_ARRAY_BUFFER, block_texture);
+    glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 0, (void *) 0);
 
 
     vector<vector<int>> currentState = gameBoard.getcurrentState();
@@ -124,7 +132,7 @@ void Game::draw(void) {
                     glBindBuffer(GL_ARRAY_BUFFER, block_color_buffers[7]);
                     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, (void *) 0);
 
-                    trans = glm::translate(scale, vec3((float) j + zoom,  -((float)i + zoom), 0.0f));
+                    trans = glm::translate(scale, vec3((float) j + zoom, -((float) i + zoom), 0.0f));
                     glUniformMatrix4fv(m, 1, GL_FALSE, &trans[0][0]);
 
                     glDrawArrays(GL_TRIANGLES, 0, 6); // 3 indices starting at 0 -> 1 triangle
@@ -142,7 +150,7 @@ void Game::draw(void) {
 
 //incluir moves nos Ifs
 //remover bools
-bool Game::listenMoves() {
+void Game::listenMoves() {
     if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS) {
         gameBoard.currentShape->rotateShape(1);
     }
@@ -178,9 +186,8 @@ void Game::transferDataToGPUMemory(void) {
         glBufferData(GL_ARRAY_BUFFER, sizeof(block_color_data[i]), block_color_data[i], GL_STATIC_DRAW);
     }
 
-    /*
-    glGenTextures(1, &texture1);
-    glBindTexture(GL_TEXTURE_2D, texture1);
+    glGenTextures(1, &block_texture);
+    glBindTexture(GL_TEXTURE_2D, block_texture);
     // set the texture wrapping parameters
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
@@ -190,15 +197,17 @@ void Game::transferDataToGPUMemory(void) {
     // load image, create texture and generate mipmaps
     int width, height, nrChannels;
     stbi_set_flip_vertically_on_load(true); // tell stb_image.h to flip loaded texture's on the y-axis.
-    unsigned char *data = stbi_load("container.jpg", &width, &height, &nrChannels, 0);
+    unsigned char *data = stbi_load("bloco_fixe_3.png", &width, &height, &nrChannels, 0);
     if (data) {
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
         glGenerateMipmap(GL_TEXTURE_2D);
+        printf("size %d, %d", width, height);
+
     } else {
         std::cout << "Failed to load texture" << std::endl;
     }
+
     stbi_image_free(data);
-     */
 
 }
 

@@ -1,28 +1,13 @@
-// Include standard headers
-#include <stdio.h>
-#include <stdlib.h>
-// Include GLEW
 #include <GL/glew.h>
-// Include GLFW
 #include <GLFW/glfw3.h>
 
 GLFWwindow *window;
-
-// GLM header file
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtc/type_ptr.hpp>
 #include <iostream>
-
-using namespace glm;
-
-#include "common/shader.hpp"
+#define STB_IMAGE_IMPLEMENTATION
 
 #define WINDOW_H 800
 #define WINDOW_W 600
 
-#include "Board.h"
-#include "Shape.h"
 #include "Game.h"
 
 //J para Jogo, M para menu
@@ -64,7 +49,7 @@ void setup() {
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
     // Open a window
-    window = glfwCreateWindow(800, 800, "Moving House in 2D ", NULL, NULL);
+    window = glfwCreateWindow(800, 800, "Tretis", NULL, NULL);
 
     // Create window context
     glfwMakeContextCurrent(window);

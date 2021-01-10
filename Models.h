@@ -16,6 +16,16 @@ static const GLfloat block_vertex_data[] = {
         0.0f, 1.0f, 0.0f,
 };
 
+static const GLfloat block_texture_points[] = {
+        0.0f, 0.0f,
+        1.0f, 0.0f,
+        1.0f, 1.0f,
+        1.0f, 1.0f,
+        0.0f, 1.0f,
+        0.0f, 0.0f,
+
+};
+
 // One color for each vertex. They were generated randomly.
 static const GLfloat block_color_data[8][18] = {
         //vermelho
