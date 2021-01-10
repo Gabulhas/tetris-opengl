@@ -32,7 +32,16 @@ void Game::tick() {
 
     while (running) {
         render();
-        listenMoves();
+
+
+        if(sleptTicks % 3 == 0){
+            listenMoves();
+        }
+        if(sleptTicks != sleepTicks){
+            sleptTicks++;
+            continue;
+        }
+        sleptTicks = 0;
         if (!gameBoard.move_piece('D')) {
             vector<int> clearedRows = gameBoard.clearFullRows();
             if (pontos != pontos + clearedRows.size()) {
@@ -44,7 +53,6 @@ void Game::tick() {
             gameBoard.insertShape(&shape);
             fflush(stdout);
         }
-        sleep(((float) 0.1 / pontos));
     }
 
 }
@@ -58,7 +66,7 @@ void Game::render() {
 
 
 void Game::draw(void) {
-    angulo += 0.5f;
+    angulo += 0.05f;
     // Clear the screen
     glClear(GL_COLOR_BUFFER_BIT);
 
@@ -71,14 +79,15 @@ void Game::draw(void) {
 
     glm::mat4 model = glm::mat4(1.0f);
 
-    model = glm::rotate(model, glm::radians((glm::sin(angulo) / 360 - 1) * 360 ), glm::vec3(0, 4, 2));
-    glm::mat4 view = glm::mat4(1.0f);
+    model = glm::rotate(model, glm::radians(glm::sin(angulo) * 10), glm::vec3(1, 1, 2));
 
     glm::mat4 projection = glm::perspective(glm::radians(45.0f), 1.0f, 0.1f, 100.0f);
+
+    glm::mat4 view = glm::mat4(1.0f);
     view = glm::lookAt(
             //posição da câmara a olhar para o ponto
             glm::vec3(10, -20, 60), // Camera is at (4,3,-3), in World Space
-            glm::vec3(-1, -1, -1000), // and looks at the origin
+            glm::vec3(-1 * glm::sin(angulo * 10) * 10, -1, -1000), // and looks at the origin
             glm::vec3(0, 1, 0)  // Head is up (set to 0,-1,0 to look upside-down)
     );
 

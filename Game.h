@@ -46,6 +46,9 @@ private:
     int pontos = 1;
     float angulo = 0;
 
+    int sleepTicks = 20;
+    int sleptTicks = 0;
+
 
     void tick();
 
