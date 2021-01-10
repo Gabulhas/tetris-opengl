@@ -44,7 +44,7 @@ void Game::tick() {
             gameBoard.insertShape(&shape);
             fflush(stdout);
         }
-        sleep(((float) 0.3 / pontos));
+        sleep(((float) 0.1 / pontos));
     }
 
 }
@@ -58,6 +58,7 @@ void Game::render() {
 
 
 void Game::draw(void) {
+    angulo += 0.5f;
     // Clear the screen
     glClear(GL_COLOR_BUFFER_BIT);
 
@@ -67,7 +68,22 @@ void Game::draw(void) {
     // create transformations
     //glm::mat4 model = glm::mat4(1.0f);
     //glm::mat4 view = glm::mat4(1.0f);
-    glm::mat4 mvp = glm::ortho(-40.0f, 40.0f, -40.0f, 40.0f);
+
+    glm::mat4 model = glm::mat4(1.0f);
+
+    model = glm::rotate(model, glm::radians((glm::sin(angulo) / 360 - 1) * 360 ), glm::vec3(0, 4, 2));
+    glm::mat4 view = glm::mat4(1.0f);
+
+    glm::mat4 projection = glm::perspective(glm::radians(45.0f), 1.0f, 0.1f, 100.0f);
+    view = glm::lookAt(
+            //posição da câmara a olhar para o ponto
+            glm::vec3(10, -20, 60), // Camera is at (4,3,-3), in World Space
+            glm::vec3(-1, -1, -1000), // and looks at the origin
+            glm::vec3(0, 1, 0)  // Head is up (set to 0,-1,0 to look upside-down)
+    );
+
+    // Our ModelViewProjection : multiplication of our 3 matrices
+    glm::mat4 mvp = projection * view * model;
 
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, block_texture);

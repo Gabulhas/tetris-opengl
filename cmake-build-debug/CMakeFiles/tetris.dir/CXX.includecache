@@ -88,16 +88,6 @@ intrin.h
 arm_neon.h
 -
 
-/home/guilherme/CLionProjects/projeto-final/main.cpp
-GL/glew.h
--
-GLFW/glfw3.h
--
-iostream
--
-Game.h
-/home/guilherme/CLionProjects/projeto-final/Game.h
-
 /home/guilherme/CLionProjects/projeto-final/utils.h
 iostream
 -

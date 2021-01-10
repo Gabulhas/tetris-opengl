@@ -44,6 +44,7 @@ private:
     GLuint block_texture;
 
     int pontos = 1;
+    float angulo = 0;
 
 
     void tick();
