@@ -8,6 +8,8 @@
 #include "Game.h"
 #include "Models.h"
 #include "utils.h"
+#include "common/stb_image.h"
+
 
 Game::Game(int HEIGHT, int WIDTH, GLFWwindow *window) {
     gameBoard = Board();
@@ -78,7 +80,10 @@ void Game::draw(void) {
 
 
     glm::mat4 trans = glm::mat4(1.0);
-    glUniformMatrix4fv(m, 1, GL_FALSE, &trans[0][0]);
+
+    float zoom = 1.5;
+    glm::mat4 scale = glm::scale(glm::mat4(1.0f),glm::vec3(zoom, zoom, zoom) );
+    glUniformMatrix4fv(m, 1, GL_FALSE, &(scale * trans)[0][0]);
 
 
     glEnableVertexAttribArray(0);
@@ -96,7 +101,7 @@ void Game::draw(void) {
             glBindBuffer(GL_ARRAY_BUFFER, block_color_buffers[currentState.at(i).at(j) - 1]);
             glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, (void *) 0);
 
-            trans = glm::translate(mat4(1), vec3((float) j + 1, (float) -(i + 1), 0.0f));
+            trans = glm::translate(scale, vec3((float) j + 1 + zoom, (float) -(i + 1 + zoom), 0.0f));
             glUniformMatrix4fv(m, 1, GL_FALSE, &trans[0][0]);
 
             glDrawArrays(GL_TRIANGLES, 0, 6); // 3 indices starting at 0 -> 1 triangle
@@ -109,7 +114,7 @@ void Game::draw(void) {
                 glBindBuffer(GL_ARRAY_BUFFER, block_color_buffers[7]);
                 glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, (void *) 0);
 
-                trans = glm::translate(mat4(1), vec3((float) j, (float) -i, 0.0f));
+                trans = glm::translate(scale, vec3((float) j + zoom, (float) -i - zoom, 0.0f));
                 glUniformMatrix4fv(m, 1, GL_FALSE, &trans[0][0]);
 
                 glDrawArrays(GL_TRIANGLES, 0, 6); // 3 indices starting at 0 -> 1 triangle
@@ -119,7 +124,7 @@ void Game::draw(void) {
                     glBindBuffer(GL_ARRAY_BUFFER, block_color_buffers[7]);
                     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, (void *) 0);
 
-                    trans = glm::translate(mat4(1), vec3((float) j, (float) -i, 0.0f));
+                    trans = glm::translate(scale, vec3((float) j + zoom,  -((float)i + zoom), 0.0f));
                     glUniformMatrix4fv(m, 1, GL_FALSE, &trans[0][0]);
 
                     glDrawArrays(GL_TRIANGLES, 0, 6); // 3 indices starting at 0 -> 1 triangle
@@ -172,6 +177,29 @@ void Game::transferDataToGPUMemory(void) {
         glBindBuffer(GL_ARRAY_BUFFER, block_color_buffers[i]);
         glBufferData(GL_ARRAY_BUFFER, sizeof(block_color_data[i]), block_color_data[i], GL_STATIC_DRAW);
     }
+
+    /*
+    glGenTextures(1, &texture1);
+    glBindTexture(GL_TEXTURE_2D, texture1);
+    // set the texture wrapping parameters
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    // set texture filtering parameters
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    // load image, create texture and generate mipmaps
+    int width, height, nrChannels;
+    stbi_set_flip_vertically_on_load(true); // tell stb_image.h to flip loaded texture's on the y-axis.
+    unsigned char *data = stbi_load("container.jpg", &width, &height, &nrChannels, 0);
+    if (data) {
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+        glGenerateMipmap(GL_TEXTURE_2D);
+    } else {
+        std::cout << "Failed to load texture" << std::endl;
+    }
+    stbi_image_free(data);
+     */
+
 }
 
 void Game::cleanGPU() {
