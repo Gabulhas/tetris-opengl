@@ -34,10 +34,10 @@ void Game::tick() {
         render();
 
 
-        if(sleptTicks % 3 == 0){
+        if (sleptTicks % 3 == 0) {
             listenMoves();
         }
-        if(sleptTicks != sleepTicks){
+        if (sleptTicks != sleepTicks) {
             sleptTicks++;
             continue;
         }
@@ -66,9 +66,17 @@ void Game::render() {
 
 
 void Game::draw(void) {
-    angulo += 0.05f;
+    angulo += 0.005f;
     // Clear the screen
     glClear(GL_COLOR_BUFFER_BIT);
+
+
+    char text[256];
+    sprintf(text,"%.2f sec", glfwGetTime() );
+
+
+    printText2DWithColor("andré gay", 10, 500, 10, glm::vec3(0.5f, 0.5f, 0.0f));
+
 
     // Use our shader
     glUseProgram(programID);
@@ -233,6 +241,8 @@ void Game::transferDataToGPUMemory(void) {
     }
 
     stbi_image_free(data);
+
+    initText2D("Holstein.DDS");
 
 }
 

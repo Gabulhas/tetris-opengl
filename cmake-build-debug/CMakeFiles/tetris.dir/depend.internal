@@ -19,6 +19,7 @@ CMakeFiles/tetris.dir/Game.cpp.o
  /home/guilherme/CLionProjects/projeto-final/Shape.h
  /home/guilherme/CLionProjects/projeto-final/common/shader.hpp
  /home/guilherme/CLionProjects/projeto-final/common/stb_image.h
+ /home/guilherme/CLionProjects/projeto-final/common/text2D.hpp
  /home/guilherme/CLionProjects/projeto-final/utils.h
 CMakeFiles/tetris.dir/Position.cpp.o
  /home/guilherme/CLionProjects/projeto-final/Position.cpp
@@ -34,6 +35,7 @@ CMakeFiles/tetris.dir/main.cpp.o
  /home/guilherme/CLionProjects/projeto-final/Shape.h
  /home/guilherme/CLionProjects/projeto-final/common/shader.hpp
  /home/guilherme/CLionProjects/projeto-final/common/stb_image.h
+ /home/guilherme/CLionProjects/projeto-final/common/text2D.hpp
  /home/guilherme/CLionProjects/projeto-final/main.cpp
 CMakeFiles/tetris.dir/test.cpp.o
  /home/guilherme/CLionProjects/projeto-final/test.cpp

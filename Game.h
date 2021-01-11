@@ -12,6 +12,7 @@
 #include <GLFW/glfw3.h>
 #include "common/shader.hpp"
 #include "common/stb_image.h"
+#include "common/text2D.hpp"
 
 // GLM header file
 #include <glm/glm.hpp>

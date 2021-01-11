@@ -62,7 +62,7 @@ void setup() {
     glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
 
     // White background
-    glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
+    glClearColor(0.1f, 0.1f, 0.1f, 0.1f);
 
 }
 

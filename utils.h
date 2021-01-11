@@ -8,6 +8,7 @@
 #include <ctime>
 
 using namespace std;
+//TODO: mudar para class
 
 void sleep(float seconds){
     clock_t startClock = clock();
