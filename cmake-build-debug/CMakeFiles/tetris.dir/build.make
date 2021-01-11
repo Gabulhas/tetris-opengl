@@ -90,22 +90,9 @@ CMakeFiles/tetris.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tetris.dir/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/guilherme/CLionProjects/projeto-final/main.cpp -o CMakeFiles/tetris.dir/main.cpp.s
 
-CMakeFiles/tetris.dir/GLAD/src/glad.c.o: CMakeFiles/tetris.dir/flags.make
-CMakeFiles/tetris.dir/GLAD/src/glad.c.o: ../GLAD/src/glad.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guilherme/CLionProjects/projeto-final/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/tetris.dir/GLAD/src/glad.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tetris.dir/GLAD/src/glad.c.o   -c /home/guilherme/CLionProjects/projeto-final/GLAD/src/glad.c
-
-CMakeFiles/tetris.dir/GLAD/src/glad.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/tetris.dir/GLAD/src/glad.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/guilherme/CLionProjects/projeto-final/GLAD/src/glad.c > CMakeFiles/tetris.dir/GLAD/src/glad.c.i
-
-CMakeFiles/tetris.dir/GLAD/src/glad.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/tetris.dir/GLAD/src/glad.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/guilherme/CLionProjects/projeto-final/GLAD/src/glad.c -o CMakeFiles/tetris.dir/GLAD/src/glad.c.s
-
 CMakeFiles/tetris.dir/Board.cpp.o: CMakeFiles/tetris.dir/flags.make
 CMakeFiles/tetris.dir/Board.cpp.o: ../Board.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guilherme/CLionProjects/projeto-final/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/tetris.dir/Board.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guilherme/CLionProjects/projeto-final/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/tetris.dir/Board.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tetris.dir/Board.cpp.o -c /home/guilherme/CLionProjects/projeto-final/Board.cpp
 
 CMakeFiles/tetris.dir/Board.cpp.i: cmake_force
@@ -118,7 +105,7 @@ CMakeFiles/tetris.dir/Board.cpp.s: cmake_force
 
 CMakeFiles/tetris.dir/Position.cpp.o: CMakeFiles/tetris.dir/flags.make
 CMakeFiles/tetris.dir/Position.cpp.o: ../Position.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guilherme/CLionProjects/projeto-final/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/tetris.dir/Position.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guilherme/CLionProjects/projeto-final/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/tetris.dir/Position.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tetris.dir/Position.cpp.o -c /home/guilherme/CLionProjects/projeto-final/Position.cpp
 
 CMakeFiles/tetris.dir/Position.cpp.i: cmake_force
@@ -131,7 +118,7 @@ CMakeFiles/tetris.dir/Position.cpp.s: cmake_force
 
 CMakeFiles/tetris.dir/Shape.cpp.o: CMakeFiles/tetris.dir/flags.make
 CMakeFiles/tetris.dir/Shape.cpp.o: ../Shape.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guilherme/CLionProjects/projeto-final/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/tetris.dir/Shape.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guilherme/CLionProjects/projeto-final/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/tetris.dir/Shape.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tetris.dir/Shape.cpp.o -c /home/guilherme/CLionProjects/projeto-final/Shape.cpp
 
 CMakeFiles/tetris.dir/Shape.cpp.i: cmake_force
@@ -144,7 +131,7 @@ CMakeFiles/tetris.dir/Shape.cpp.s: cmake_force
 
 CMakeFiles/tetris.dir/test.cpp.o: CMakeFiles/tetris.dir/flags.make
 CMakeFiles/tetris.dir/test.cpp.o: ../test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guilherme/CLionProjects/projeto-final/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/tetris.dir/test.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guilherme/CLionProjects/projeto-final/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/tetris.dir/test.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tetris.dir/test.cpp.o -c /home/guilherme/CLionProjects/projeto-final/test.cpp
 
 CMakeFiles/tetris.dir/test.cpp.i: cmake_force
@@ -157,7 +144,7 @@ CMakeFiles/tetris.dir/test.cpp.s: cmake_force
 
 CMakeFiles/tetris.dir/Game.cpp.o: CMakeFiles/tetris.dir/flags.make
 CMakeFiles/tetris.dir/Game.cpp.o: ../Game.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guilherme/CLionProjects/projeto-final/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/tetris.dir/Game.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guilherme/CLionProjects/projeto-final/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/tetris.dir/Game.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tetris.dir/Game.cpp.o -c /home/guilherme/CLionProjects/projeto-final/Game.cpp
 
 CMakeFiles/tetris.dir/Game.cpp.i: cmake_force
@@ -171,7 +158,6 @@ CMakeFiles/tetris.dir/Game.cpp.s: cmake_force
 # Object files for target tetris
 tetris_OBJECTS = \
 "CMakeFiles/tetris.dir/main.cpp.o" \
-"CMakeFiles/tetris.dir/GLAD/src/glad.c.o" \
 "CMakeFiles/tetris.dir/Board.cpp.o" \
 "CMakeFiles/tetris.dir/Position.cpp.o" \
 "CMakeFiles/tetris.dir/Shape.cpp.o" \
@@ -182,7 +168,6 @@ tetris_OBJECTS = \
 tetris_EXTERNAL_OBJECTS =
 
 tetris: CMakeFiles/tetris.dir/main.cpp.o
-tetris: CMakeFiles/tetris.dir/GLAD/src/glad.c.o
 tetris: CMakeFiles/tetris.dir/Board.cpp.o
 tetris: CMakeFiles/tetris.dir/Position.cpp.o
 tetris: CMakeFiles/tetris.dir/Shape.cpp.o
@@ -192,7 +177,7 @@ tetris: CMakeFiles/tetris.dir/build.make
 tetris: /usr/lib/libglfw.so.3.3
 tetris: common/libcommon.a
 tetris: CMakeFiles/tetris.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/guilherme/CLionProjects/projeto-final/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable tetris"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/guilherme/CLionProjects/projeto-final/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable tetris"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tetris.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

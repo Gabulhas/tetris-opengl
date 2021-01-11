@@ -183,33 +183,6 @@ Board.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tetris.dir/build.make CMakeFiles/tetris.dir/Board.cpp.s
 .PHONY : Board.cpp.s
 
-GLAD/src/glad.o: GLAD/src/glad.c.o
-
-.PHONY : GLAD/src/glad.o
-
-# target to build an object file
-GLAD/src/glad.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tetris.dir/build.make CMakeFiles/tetris.dir/GLAD/src/glad.c.o
-.PHONY : GLAD/src/glad.c.o
-
-GLAD/src/glad.i: GLAD/src/glad.c.i
-
-.PHONY : GLAD/src/glad.i
-
-# target to preprocess a source file
-GLAD/src/glad.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tetris.dir/build.make CMakeFiles/tetris.dir/GLAD/src/glad.c.i
-.PHONY : GLAD/src/glad.c.i
-
-GLAD/src/glad.s: GLAD/src/glad.c.s
-
-.PHONY : GLAD/src/glad.s
-
-# target to generate assembly for a file
-GLAD/src/glad.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tetris.dir/build.make CMakeFiles/tetris.dir/GLAD/src/glad.c.s
-.PHONY : GLAD/src/glad.c.s
-
 Game.o: Game.cpp.o
 
 .PHONY : Game.o
@@ -358,9 +331,6 @@ help:
 	@echo "... Board.o"
 	@echo "... Board.i"
 	@echo "... Board.s"
-	@echo "... GLAD/src/glad.o"
-	@echo "... GLAD/src/glad.i"
-	@echo "... GLAD/src/glad.s"
 	@echo "... Game.o"
 	@echo "... Game.i"
 	@echo "... Game.s"

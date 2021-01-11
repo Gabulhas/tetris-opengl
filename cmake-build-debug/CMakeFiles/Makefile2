@@ -114,12 +114,12 @@ common/clean: common/CMakeFiles/common.dir/clean
 CMakeFiles/tetris.dir/all: common/CMakeFiles/common.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tetris.dir/build.make CMakeFiles/tetris.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tetris.dir/build.make CMakeFiles/tetris.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/guilherme/CLionProjects/projeto-final/cmake-build-debug/CMakeFiles --progress-num=11,12,13,14,15,16,17,18 "Built target tetris"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/guilherme/CLionProjects/projeto-final/cmake-build-debug/CMakeFiles --progress-num=11,12,13,14,15,16,17 "Built target tetris"
 .PHONY : CMakeFiles/tetris.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/tetris.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/guilherme/CLionProjects/projeto-final/cmake-build-debug/CMakeFiles 18
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/guilherme/CLionProjects/projeto-final/cmake-build-debug/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/tetris.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/guilherme/CLionProjects/projeto-final/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/tetris.dir/rule
