@@ -45,7 +45,8 @@ void Game::tick() {
         if (!gameBoard.move_piece('D')) {
             vector<int> clearedRows = gameBoard.clearFullRows();
             if (pontos != pontos + clearedRows.size()) {
-                pontos += clearedRows.size();
+
+                pontos += clearedRows.size() * clearedRows.size();
             }
 
             running = !gameBoard.currentShape->hasNegative();
@@ -72,10 +73,10 @@ void Game::draw(void) {
 
 
     char text[256];
-    sprintf(text,"%.2f sec", glfwGetTime() );
+    sprintf(text, "Pontos: %d", pontos);
 
 
-    printText2DWithColor("andré gay", 10, 500, 10, glm::vec3(0.5f, 0.5f, 0.0f));
+    printText2DWithColor(text, 5, 520, 20, glm::vec3(0.204f, 0.922f, 0.812f));
 
 
     // Use our shader

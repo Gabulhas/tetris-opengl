@@ -167,14 +167,13 @@ void printText2DWithColor(const char * text, int x, int y, int size, glm::vec3 c
     // Bind shader
     glUseProgram(Text2DShaderID);
 
+    glUniform3f(glGetUniformLocation(Text2DShaderID, "fragmentColor"), colors.x, colors.y, colors.z);
     // Bind texture
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, Text2DTextureID);
     // Set our "myTextureSampler" sampler to use Texture Unit 0
     glUniform1i(Text2DUniformID, 0);
 
-    printf("\n\n%.2f %.2f %.2f\n\n",colors.x, colors.y, colors.z);
-    glUniform3f(glGetUniformLocation(Text2DShaderID, "fragmentColor"), colors.x, colors.y, colors.z);
 
     // 1rst attribute buffer : vertices
     glEnableVertexAttribArray(0);

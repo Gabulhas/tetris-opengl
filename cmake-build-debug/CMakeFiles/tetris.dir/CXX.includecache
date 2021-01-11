@@ -12,6 +12,18 @@ Position.h
 Shape.h
 /home/guilherme/CLionProjects/projeto-final/Shape.h
 
+/home/guilherme/CLionProjects/projeto-final/Game.cpp
+cstdio
+-
+iostream
+-
+Game.h
+/home/guilherme/CLionProjects/projeto-final/Game.h
+Models.h
+/home/guilherme/CLionProjects/projeto-final/Models.h
+utils.h
+/home/guilherme/CLionProjects/projeto-final/utils.h
+
 /home/guilherme/CLionProjects/projeto-final/Game.h
 GL/glew.h
 -
@@ -31,6 +43,10 @@ glm/gtc/type_ptr.hpp
 -
 Board.h
 /home/guilherme/CLionProjects/projeto-final/Board.h
+
+/home/guilherme/CLionProjects/projeto-final/Models.h
+GL/glew.h
+-
 
 /home/guilherme/CLionProjects/projeto-final/Position.h
 
@@ -80,13 +96,9 @@ glm/glm.hpp
 glm/gtc/matrix_transform.hpp
 -
 
-/home/guilherme/CLionProjects/projeto-final/main.cpp
-GL/glew.h
--
-GLFW/glfw3.h
--
+/home/guilherme/CLionProjects/projeto-final/utils.h
 iostream
 -
-Game.h
-/home/guilherme/CLionProjects/projeto-final/Game.h
+ctime
+-
 
