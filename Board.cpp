@@ -60,6 +60,7 @@ bool Board::insertShape(Shape *shape) {
         }
     }
     if (check_collision_aux(shape->myCoordinates)) {
+        fflush(stdout);
         return false;
     }
     return true;
@@ -103,6 +104,14 @@ void Board::save_piece() {
     board = getcurrentState();
 }
 
+bool Board::rotate_piece() {
+    currentShape->rotateShape(1);
+    if (check_collision_aux(currentShape->myCoordinates)) {
+        currentShape->rotateShape(-1);
+        return false;
+    }
+    return true;
+}
 
 bool Board::check_collision_aux(vector<vector<Position>> state) {
 
@@ -118,7 +127,6 @@ bool Board::check_collision_aux(vector<vector<Position>> state) {
                 if (temp.y > 0) {
                     if (board[temp.y][temp.x] != EMPTY) {
                         fflush(stdout);
-                        printf("Piece collusion");
 
                         return true;
                     }
@@ -154,16 +162,15 @@ void Board::print_aux(vector<vector<int>> temp) {
 
 
 vector<int> Board::clearFullRows() {
-    vector<int> clearedRows ;
+    vector<int> clearedRows;
 
-    for (int i = 0; i < ROWS; i++) {
+    for (int i = ROWS - 1; i > 0; i--) {
         if (isRowFull(i)) {
             deleteRow(i);
             clearedRows.push_back(i);
 
         }
     }
-    printf("\nCleard Rows: %zu", clearedRows.size());
     return clearedRows;
 }
 

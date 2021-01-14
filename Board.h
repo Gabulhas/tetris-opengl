@@ -33,6 +33,7 @@ public:
     void print_state();
     void deleteRow(int row);
     vector<int> clearFullRows();
+    bool rotate_piece();
 
 
 private:

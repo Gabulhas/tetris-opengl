@@ -10,22 +10,52 @@
 #include "utils.h"
 
 
-Game::Game(int HEIGHT, int WIDTH, GLFWwindow *window) {
+Game::Game(GLFWwindow *window) {
     gameBoard = Board();
-    this->HEIGHT = HEIGHT;
-    this->WIDTH = WIDTH;
     this->window = window;
 }
 
 void Game::Start() {
 
     transferDataToGPUMemory();
-    tick();
+    // se devolver true é porque perdeu, se devolveu false é porque só quis voltar atrás
+    bool perdeu = tick();
+    glClear(GL_COLOR_BUFFER_BIT);
+    if (perdeu) {
+        printf("GAMEOVER");
+        fflush(stdout);
+        gameOverWait();
+    }
     cleanGPU();
-
 }
 
-void Game::tick() {
+void Game::gameOverWait() {
+    while (true) {
+
+        glClear(GL_COLOR_BUFFER_BIT);
+
+        char text[256];
+        sprintf(text, "Perdeste Jacare. Pontos: %d", pontos);
+        printText2DWithColor(text, 0, 300, 30, glm::vec3(0.0f, 0.0f, 0.0f));
+        if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
+            cleanGPU();
+            glfwSetWindowShouldClose(window, true);
+            exit(0);
+        }
+        if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS) {
+            glClear(GL_COLOR_BUFFER_BIT);
+            cleanGPU();
+            glfwSetWindowShouldClose(window, true);
+            glfwDestroyWindow(window);
+            return;
+        }
+
+        glfwSwapBuffers(window);
+        glfwPollEvents();
+    }
+}
+
+bool Game::tick() {
     bool running = true;
     Shape shape = Shape();
     gameBoard.insertShape(&shape);
@@ -34,27 +64,33 @@ void Game::tick() {
         render();
 
 
-        if (sleptTicks % 3 == 0) {
-            listenMoves();
+        if (sleptTicks % 4 == 0) {
+            running = listenMoves();
         }
-        if (sleptTicks != sleepTicks) {
-            sleptTicks++;
+        if (sleptTicks <= sleepTicks) {
+
+            sleptTicks = sleptTicks + 1;
             continue;
         }
         sleptTicks = 0;
         if (!gameBoard.move_piece('D')) {
             vector<int> clearedRows = gameBoard.clearFullRows();
             if (pontos != pontos + clearedRows.size()) {
-
                 pontos += clearedRows.size() * clearedRows.size();
+                sleepTicks = sleepTicks - sqrt(pontos);
             }
 
             running = !gameBoard.currentShape->hasNegative();
+            if (!running) {
+                fflush(stdout);
+                printf("FINISHING");
+                return true;
+            }
             shape = Shape();
             gameBoard.insertShape(&shape);
-            fflush(stdout);
         }
     }
+    return false;
 
 }
 
@@ -67,36 +103,26 @@ void Game::render() {
 
 
 void Game::draw(void) {
-    angulo += 0.005f;
+    angulo += 0.0005f * pontos;
     // Clear the screen
     glClear(GL_COLOR_BUFFER_BIT);
-
 
     char text[256];
     sprintf(text, "Pontos: %d", pontos);
 
 
-    printText2DWithColor(text, 5, 520, 20, glm::vec3(0.204f, 0.922f, 0.812f));
+    printText2DWithColor(text, 300, 10, 20, glm::vec3(0.5f, 0, 0.5f));
 
 
-    // Use our shader
     glUseProgram(programID);
-
-    // create transformations
-    //glm::mat4 model = glm::mat4(1.0f);
-    //glm::mat4 view = glm::mat4(1.0f);
-
     glm::mat4 model = glm::mat4(1.0f);
-
-    model = glm::rotate(model, glm::radians(glm::sin(angulo) * 10), glm::vec3(1, 1, 2));
-
+    model = glm::rotate(model, glm::radians(glm::sin(angulo) * pontos), glm::vec3(1, 1, 2));
     glm::mat4 projection = glm::perspective(glm::radians(45.0f), 1.0f, 0.1f, 100.0f);
-
     glm::mat4 view = glm::mat4(1.0f);
     view = glm::lookAt(
             //posição da câmara a olhar para o ponto
             glm::vec3(10, -20, 60), // Camera is at (4,3,-3), in World Space
-            glm::vec3(-1 * glm::sin(angulo * 10) * 10, -1, -1000), // and looks at the origin
+            glm::vec3(-1 * glm::sin(angulo * pontos), -1, -1000), // and looks at the origin
             glm::vec3(0, 1, 0)  // Head is up (set to 0,-1,0 to look upside-down)
     );
 
@@ -182,11 +208,13 @@ void Game::draw(void) {
 
 }
 
-//incluir moves nos Ifs
-//remover bools
-void Game::listenMoves() {
-    if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS) {
-        gameBoard.currentShape->rotateShape(1);
+bool Game::listenMoves() {
+    if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS && rotateFlag) {
+        gameBoard.rotate_piece();
+        rotateFlag = false;
+    }
+    if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_RELEASE) {
+        rotateFlag = true;
     }
 
     if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS) {
@@ -200,6 +228,14 @@ void Game::listenMoves() {
     if (glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS) {
         gameBoard.move_piece('L');
     }
+    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
+        glfwSetWindowShouldClose(window, true);
+        glfwDestroyWindow(window);
+        return false;
+    }
+
+
+    return true;
 }
 
 void Game::transferDataToGPUMemory(void) {
@@ -235,7 +271,6 @@ void Game::transferDataToGPUMemory(void) {
     if (data) {
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
         glGenerateMipmap(GL_TEXTURE_2D);
-        printf("size %d, %d", width, height);
 
     } else {
         std::cout << "Failed to load texture" << std::endl;
@@ -243,7 +278,7 @@ void Game::transferDataToGPUMemory(void) {
 
     stbi_image_free(data);
 
-    initText2D("Holstein.DDS");
+    initText2D("Arial.dds");
 
 }
 

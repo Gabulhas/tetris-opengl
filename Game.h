@@ -18,6 +18,7 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+
 using namespace glm;
 // shaders header file
 
@@ -26,13 +27,11 @@ using namespace glm;
 class Game {
 public:
     //OS ÚNICOS MÉTODOS PÚBLICOS
-    Game(int HEIGHT, int WIDTH, GLFWwindow *window);
+    Game(GLFWwindow *window);
 
     void Start();
 
 private:
-    int HEIGHT;
-    int WIDTH;
     GLuint programID;
     GLuint VertexArrayID;
 
@@ -47,13 +46,13 @@ private:
     int pontos = 1;
     float angulo = 0;
 
-    int sleepTicks = 20;
+    int sleepTicks = 150;
     int sleptTicks = 0;
 
+    bool rotateFlag = true;
+    bool tick();
 
-    void tick();
-
-    void listenMoves();
+    bool listenMoves();
 
     void render();
 
@@ -62,6 +61,8 @@ private:
     void transferDataToGPUMemory(void);
 
     void cleanGPU();
+
+    void gameOverWait();
 };
 
 

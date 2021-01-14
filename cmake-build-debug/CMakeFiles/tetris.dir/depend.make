@@ -26,6 +26,7 @@ CMakeFiles/tetris.dir/Shape.cpp.o: ../Shape.h
 
 CMakeFiles/tetris.dir/main.cpp.o: ../Board.h
 CMakeFiles/tetris.dir/main.cpp.o: ../Game.h
+CMakeFiles/tetris.dir/main.cpp.o: ../Models.h
 CMakeFiles/tetris.dir/main.cpp.o: ../Position.h
 CMakeFiles/tetris.dir/main.cpp.o: ../Shape.h
 CMakeFiles/tetris.dir/main.cpp.o: ../common/shader.hpp

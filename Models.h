@@ -102,4 +102,22 @@ static const GLfloat block_color_data[8][18] = {
 
 };
 
+static const GLfloat logo_vertex_data[] = {
+        350, 350, 350,
+        400, 350, 350,
+        400, 400, 350,
+        350, 350, 350,
+        400, 400, 350,
+        350, 400, 350,
+};
+static const GLfloat logo_color_data[] =
+        {
+                1.0f, 1.0f, 0.0f,
+                1.0f, 1.0f, 0.0f,
+                1.0f, 1.0f, 0.0f,
+                1.0f, 1.0f, 0.0f,
+                1.0f, 1.0f, 0.0f,
+                1.0f, 1.0f, 0.0f,
+        };
+
 #endif //TETRIS_MODELS_H
