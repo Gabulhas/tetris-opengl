@@ -1,7 +1,3 @@
-//
-// Created by guilherme on 04/01/21.
-//
-
 #ifndef TETRIS_SHAPE_H
 #define TETRIS_SHAPE_H
 

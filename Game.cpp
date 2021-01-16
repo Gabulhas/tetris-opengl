@@ -1,7 +1,3 @@
-//
-// Created by guilherme on 08/01/21.
-//
-
 
 #include <cstdio>
 #include <iostream>
@@ -69,7 +65,7 @@ bool Game::tick() {
         }
         if (sleptTicks <= sleepTicks) {
 
-            sleptTicks = sleptTicks + 1;
+            sleptTicks = sleptTicks + int(sqrt(pontos));
             continue;
         }
         sleptTicks = 0;
@@ -103,7 +99,7 @@ void Game::render() {
 
 
 void Game::draw(void) {
-    angulo += 0.0005f * pontos;
+    angulo += 0.0015f * pontos;
     // Clear the screen
     glClear(GL_COLOR_BUFFER_BIT);
 

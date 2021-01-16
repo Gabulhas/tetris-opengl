@@ -1,8 +1,3 @@
-//
-
-// Created by guilherme on 04/01/21.
-//
-
 #include <time.h>
 #include <cstdlib>
 #include "Shape.h"

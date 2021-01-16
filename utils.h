@@ -1,7 +1,3 @@
-//
-// Created by guilherme on 09/01/21.
-//
-
 #ifndef TETRIS_UTILS_H
 #define TETRIS_UTILS_H
 #include <iostream>

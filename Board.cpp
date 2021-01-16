@@ -1,7 +1,3 @@
-//
-// Created by guilherme on 04/01/21.
-//
-
 #include <vector>
 #include "Board.h"
 #include "cstdio"

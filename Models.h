@@ -1,7 +1,3 @@
-//
-// Created by guilherme on 08/01/21.
-//
-
 #ifndef TETRIS_MODELS_H
 #define TETRIS_MODELS_H
 
