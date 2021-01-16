@@ -164,7 +164,7 @@ void Board::print_aux(vector<vector<int>> temp) {
 vector<int> Board::clearFullRows() {
     vector<int> clearedRows;
 
-    for (int i = ROWS - 1; i > 0; i--) {
+    for (int i = 0; i < ROWS; i++) {
         if (isRowFull(i)) {
             deleteRow(i);
             clearedRows.push_back(i);
